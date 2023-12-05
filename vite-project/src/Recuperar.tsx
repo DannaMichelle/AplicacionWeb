@@ -1,73 +1,67 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import logotipo from "./assets/logotipo.jpg"; 
-import "./estilos/acceso.css";
+import logotipo from "./assets/logo.jpeg"
+import "./estilos/recuperar.css";
 
-const Recuperar =() => {
+const Recuperar = () => { 
 
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
-const [correo, setCorreo] = useState("");
+    const [correo, setCorreo] = useState ("");
 
-const onOlvidemicontraseña=async () => {{
-     if (correo==""){
-        alert("ingrese un correo");
-        return;
-     }
-const url="http://localhost:4000/usuarios/recuperar-password";
-const response=await fetch(url,{
-    method:"POST",
-    body:JSON.stringify({
-        Correo: correo
-    }),
-    headers:{
-        "Content-Type":"application/json"
-    }
-})
+    const onIngresar = async () => { 
+            const url = "http://localhost:4000/usuarios/recuperar-password";
+            const response = await fetch(url, {
+                method: "POST",
+                body: JSON.stringify ({ 
+                    Correo: correo,
+                }), 
+                headers: { 
+                    "Content-Type": "application/json"
+                }
+            });
+            if(!response.ok){
+                const mensaje = await response.text();
+                console.log(mensaje);
+                alert (mensaje);
+            }
+            else{
+                alert ("Se le enviado un correo a su cuenta");
+                navigate ("/");
+            }
+        }
 
-if (!response.ok){
-    const mensaje=await response.text();
-    alert(mensaje);
-}else{
-    alert ("se envio correo");
-    navigate("/");
-}
 
-}}
+return( 
+    <div className="contenedor2">
 
-return(
+    <div className="titulo2"> Recuperar contraseña</div>
 
-<div className="contenedor">
-
-<div className="titulo">Enseña.Me LSM</div>
-
-<div>
-
-<img src={logotipo} className="logo"/>
-
-</div>
-
-<div className="agrupador-password">
-<div>Correo</div>
-<div> 
-    <input
-type="text"
-placeholder="Ingrese tu Correo electronico"
-className="caja-password"
-value={correo}
-onChange={(e)=> setCorreo(e.target.value)}
-/>
+    <div>
+    <img src= {logotipo} className= "logo"/>
     </div>
-    </div>
-<div className="agrupador-boton">
-<button className="boton-ingresar" onClick={() => onOlvidemicontraseña() }>Ingresar</button>
-</div>
 
-<div className="otros-botones">
-<a href="/acceso" className="link-acceso">Acceso</a>
-<a href="/registro" className="link-password">Registrarse</a>
+    <div className="agrupador-correo2">
+        <div>Correo Electrónico</div>
+        <div>
+            <input
+            type="text"
+            placeholder="Ingresa tu correo electrónico"
+            className="caja-correo"
+            value={correo}
+            onChange={(e)=> setCorreo(e.target.value)}/>
         </div>
+        </div>
+                
+            <div className="agrupador-boton2" >
+                <button className="boton-ingresar" onClick={()=> onIngresar() }>Ingresar</button>
                 </div>
+
+                <div className="otros-botones2">
+                    <a href="/" className="link-registro">Retroceder</a>
+                </div>
+
+            </div>
 )
-}
-export default Recuperar
+    }
+    export default Recuperar

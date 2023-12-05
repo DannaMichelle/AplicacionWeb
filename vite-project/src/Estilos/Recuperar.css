@@ -1,53 +1,66 @@
-.contenedor { 
-    border: solid 1px #c26aee;
+.contenedor2 { 
+    border: solid 1px #ccc;
     width: 100%;
-    max-width: 500px; margin: 0px auto;
+    max-width: 500px;
+    margin: 0px auto;
     font-size: 30px;
     padding: 20px;
-    text-align: center; min-height: 100vh;
-    box-shadow: 0px 0px 10px #56ffff;
-    color: #d05d7e;
-    font-family: Arial;
-    }
-    .titulo {
-    font-size: 50px; 
+    text-align: center;
+    min-height: 100vh;
+    box-shadow: 0px 0px 10px #ccc;
+    color: #555;
+    font-family: Times New Roman;
+}
+
+.titulo2 {
+    font-size: 50px;
+    border: none;
+    background-color: #ffffff;
+    color:white;
     margin-bottom: 20px;
-    }
-    .logo {
-    width: 200px; 
-    height: 200px;
-    }
-    .caja-correo, .caja-password { 
-        font-size: 30px;
+}
+
+.logo{ 
+    width: 300px;
+    height: 300px;
+}
+
+.caja-correo2, .caja-password2 {
+    font-size: 30px;
     width: 100%;
     border: none;
-    border-bottom: solid 1px ☐red;
+    border-bottom: solid 1px #917794;
     outline: none;
     margin-top: 10px;
-    }
-    input::placeholder{ 
-        color: #edf115f3;
-    }
-    .agrupador-correo, .agrupador-password {
-         text-align: left;
-        margin-top: 20px;
-        }
-        .agrupador-boton {
-             margin-top: 30px;
-        }
-        
-        .boton-ingresar {    
-        font-size: 30px;
-        background-color:rgb(34, 17, 127);
-        color: white;
-        padding: 10px; cursor: pointer;
-        }
-        .otros-botones {
-        margin-top: 50px; 
-        text-align: center;
-        background-color: green;
-        }
-        .link-registro, .link-password {
-        color:#b736ea; 
-        display:block;
-        }
+}
+
+    input::placeholder{
+    color: #ccc;
+}
+
+.agrupador-correo2, .agrupador-password2 {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.agrupador-boton2 { 
+    margin-top: 30px;
+}
+
+.boton-ingresar2{ 
+    font-size: 30px;
+    background-color: #BE9FC2;
+    color:white;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.otros-botones2{ 
+margin-top:50px;
+text-align: center;
+}
+
+.link-registro, .link-password {
+color:#999;
+display: block;
+}
